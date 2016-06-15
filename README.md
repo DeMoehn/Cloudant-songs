@@ -1,4 +1,4 @@
-Cloudant GeoMap Example
+Cloudant Songs Example
 =================
 
 ##Live action?
