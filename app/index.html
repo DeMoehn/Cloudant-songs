@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"> <!--  manifest="example.appcache" -->
+  <head>
+    <!-- META Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Cloudant Offline ToDo List">
+    <meta name="author" content="Sebastian Moehn">
+    <!-- SCRIPTS -->
+    <script src="js/jquery.js"></script>
+    <script src="js/KelpJSONView.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+    <script src="js/config" type="text/javascript"></script>
+    <!-- CSS -->
+    <link href="css/KelpJSONView.css" rel="stylesheet" type="text/css"/>
+    <link href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- Favicon & Title -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+    <title>CRUD operations with Cloudant</title>
+  </head>
+
+  <body>
+    <!-- Container for every Content -->
+    <div id="totalwrapper">
+      <!-- Header -->
+      <div id="wrapper-top">
+        <table><tr>
+          <td><img id="logo" src="img/cloudant.png" width="364" height="82"></td>
+          <td><div id="title"><b>JavaScript/JQuery CRUD Example</b></div></td></tr>
+        </table>
+      </div>
+
+      <!-- Status Container -->
+      <div id="wrapper-status">
+        <div id="toodle"></div>
+      </div>
+
+      <!-- Center container -->
+      <div id="wrapper-left">
+        <!-- Content container -->
+        <div id="crud">
+          <div class="title-medium">Cloudant Playlists CRUD:</div>
+          <table>
+            <tr><td valign="">Create a New Playlist:</td>
+              <td>
+                <input class="input" type="text" id="newplaylistname" style="width:150px; height:25px;" placeholder="<Playlist name>">
+                <input class="btn" type="button" id="create" value="CREATE!">
+              </td>
+            </tr>
+            <tr>
+              <td valign="">Choose Playlist:</td>
+              <td>
+                <select class="input" id="playlists" style="width:150px; height:25px;"></select>
+                <input class="btn" type="button" id="read" value="READ!">
+                <input class="btn" type="button" id="delete" value="DELETE!">
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">Add Song to Playlist:</td>
+              <td>
+                <input class="input update" type="text" id="artistname" style="width:150px; height:25px;" placeholder="<Artist Name>"><br/>
+                <input class="input update" type="text" id="songname" style="width:150px; height:25px;" placeholder="<Song Title>">
+                <input class="btn" type="button" id="update" value="UPDATE!">
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Log container -->
+        <div id="output">
+          <div class="title-medium">Cloudant JSON Response:</div>
+          <div id="cloudant-response"><p><pre id="output-data"></pre></p></div>
+          <div class="title-medium">Response Text:</div>
+          <div id="cloudant-response2"><p><pre id="output-resp"></pre></p></div>
+        </div>
+      </div>
+
+      <!-- Info container -->
+      <div id="wrapper-right">
+        <div class="title-medium">Songs in Playlist:</div><div>(Choose a Playlist first)</div>
+        <div id="show-songs">
+          <h2><div id="songs-playlist"></div></h2>
+          <ul id="sortable">
+          </ul>
+        </div>
+      </div>
+
+      <div id="floatclear"></div>
+    </div>
+
+    <script type="application/javascript" src="playlist.js"></script>
+  </body>
+</html>
